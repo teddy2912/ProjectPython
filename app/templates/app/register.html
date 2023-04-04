@@ -1,0 +1,131 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{%static 'app/lib/bootstrap/dist/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{%static 'app/css/site.css'%}" />
+    <link rel="stylesheet" href="{%static 'app/adminlg/vendor/fontawesome-free/css/all.min.css'%}"
+        asp-append-version="true" type="text/css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        asp-append-version="true" />
+
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="{%static 'app/adminlg/css/sb-admin-2.min.css'%}" asp-append-version="true" />
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-10">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <img src="{%static 'app/img/catHublot.jpg'%}"
+                                class="col-lg-5 d-none d-lg-block bg-login-image" />
+                            <div class="col-lg-7">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Register</h1>
+                                    </div>
+                                    <form method="POST" asp-action="Register" class="user">
+                                        {% csrf_token %}
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+
+                                            <p>
+                                                <label class="col-md-5">Username <span>*</span></label>
+                                                {{form.username}}
+                                            </p>
+
+                                        </div>
+                                        
+                                        <div class="form-group">
+
+                                            <p>
+                                                <label class="col-md-5">Email <span>*</span></label>
+                                                {{form.email}}
+                                            </p>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <p>
+                                                <label class="col-md-5">First name <span>*</span></label>
+                                                {{form.first_name}}
+                                            </p>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <p>
+                                                <label class="col-md-5">Last name <span>*</span></label>
+                                                {{form.last_name}}
+                                            </p>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <p>
+                                                <label class="col-md-5">Password <span>*</span></label>
+                                                {{form.password1}}
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <p>
+                                                <label class="col-md-5">Repeat password<span>*</span></label>
+                                                {{form.password2}}
+                                            </p>
+                                        </div>
+                                        <input type="submit" value="Register" class="btn btn-primary btn-user btn-block" />
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="#">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="{% url 'login'%}">Login</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="{%static 'app/lib/jquery/dist/jquery.min.js'%}"></script>
+    <script src="{%static 'app/lib/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'app/js/site.js'%}" asp-append-version="true"></script>
+    <script src="{%static 'app/adminlg/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{%static 'app/adminlg/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"
+        asp-append-version="true"></script>
+    <script src="{%static 'app/adminlg/vendor/jquery-easing/jquery.easing.min.js'%}" asp-append-version="true"></script>
+    <script src="{%static 'app/adminlg/js/sb-admin-2.min.js'%}" asp-append-version="true"></script>
+    <script src="{%static 'app/adminlg/vendor/chart.js/Chart.min.js'%}" asp-append-version="true"></script>
+    <script src="{%static 'app/adminlg/js/demo/chart-area-demo.js'%}" asp-append-version="true"></script>
+    <script src="{%static 'app/adminlg/js/demo/chart-pie-demo.js'%}" asp-append-version="true"></script>
+
+
+
+
+</body>
+
+</html>

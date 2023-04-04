@@ -1,18 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="{%static 'app/css/style.css'%}" rel="stylesheet">
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -21,27 +23,55 @@
     <link href="{%static 'app/lib/animate/animate.min.css'%}" rel="stylesheet">
     <link href="{%static 'app/lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+    </script>
     <title>Document</title>
 </head>
+
 <body>
-	<!-- header -->
-	<!-- Topbar Start -->
+    <!-- header -->
+    <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
-            
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                
+
+            <div class="d-inline-flex align-items-center d-block d-lg-none">
+                <a href="" class="btn px-0 ml-2">
+                    <i class="fas fa-heart text-dark"></i>
+                    <span class="badge text-dark border border-dark rounded-circle"
+                        style="padding-bottom: 2px;">0</span>
+                </a>
+                <a href="" class="btn px-0 ml-2">
+                    <i class="fas fa-shopping-cart text-dark"></i>
+                    <span class="badge text-dark border border-dark rounded-circle"
+                        style="padding-bottom: 2px;">0</span>
+                </a>
+
             </div>
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
@@ -76,14 +106,17 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse"
+                    href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
                     <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Danh mục sản phẩm</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
+                    id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                     <div class="navbar-nav w-100">
                         <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dresses <i class="fa fa-angle-right float-right mt-1"></i></a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dresses <i
+                                    class="fa fa-angle-right float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
                                 <a href="" class="dropdown-item">Men's Dresses</a>
                                 <a href="" class="dropdown-item">Women's Dresses</a>
@@ -113,27 +146,28 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="home" class="nav-item nav-link active">Trang chủ</a>
-                            <a href="ProductDetailServlet" class="nav-item nav-link">Sản phẩm</a>
-                            <a href="detail.jsp" class="nav-item nav-link">Liên hệ</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.jsp" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.jsp" class="dropdown-item">Checkout</a>
-                                </div>
-                            </div>
-                            <a href="contact.jsp" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'app:home' %}" class="nav-item nav-link active">Trang chủ</a>
+                            <a href="{% url 'app:contact' %}" class="nav-item nav-link">Liên hệ</a>
+                            <a href="{% url 'app:checkout' %}" class="nav-item nav-link">Thanh toán</a>
+
+
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
-                            
+
                                 <i class="fas fa-user text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"></span>
+                                <span class="badge text-secondary border border-secondary rounded-circle"
+                                    style="padding-bottom: 2px;">Hello {{request.user}}</span>
                             </a>
-                            <a href="cartServlet" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"></span>
+                            <a href="{% url 'app:cart' %}" id="cart-icon" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart text-primary" ></i>
+                                <span id="cart-total" class="badge text-secondary border border-secondary rounded-circle"
+                                    style="padding-bottom: 2px;">{{cartItems}}</span>
+                            </a>
+                            <a href="{% url 'app:logout' %}" id="cart-icon" class="btn px-0 ml-3">
+                                <i class="fal fa-sign-out"></i>
+                                <span id="cart-total" class="badge text-secondary border border-secondary rounded-circle"
+                                    style="padding-bottom: 2px;"></span>
                             </a>
                         </div>
                     </div>
@@ -145,10 +179,16 @@
 
     <!-- main -->
     {% block main-content %}{% endblock main-content %}
+    <!-- cart -->
+    {% block cart-content %}{% endblock cart-content %}
+    <!-- checkout -->
+    {% block checkout-content %}{% endblock checkout-content %}
+    <!-- productdetail -->
+    {% block product_detail-content %}{% endblock product_detail-content %}
+    <!-- contact -->
+    {% block contact-content %}{% endblock contact-content %}
 
-	
-
-	<!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -163,12 +203,17 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Cửa hàng</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trang chủ</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Về chúng tôi</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chi tiết cửa hàng</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Thanh toán</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
+                            <a class="text-secondary mb-2" href="{% url 'app:home' %}"><i
+                                    class="fa fa-angle-right mr-2"></i>Trang chủ</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Về chúng
+                                tôi</a>
+                            
+                            <a class="text-secondary mb-2" href="{% url 'app:cart' %}"><i
+                                    class="fa fa-angle-right mr-2"></i>Giỏ hàng</a>
+                            <a class="text-secondary mb-2" href="{% url 'app:checkout' %}"><i
+                                    class="fa fa-angle-right mr-2"></i>Thanh toán</a>
+                            <a class="text-secondary" href="{% url 'app:contact' %}"><i
+                                    class="fa fa-angle-right mr-2"></i>Liên hệ chúng tôi</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
@@ -176,7 +221,7 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Đăng nhập</a>
                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Đăng kí</a>
-                            
+
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
@@ -221,24 +266,23 @@
 
 
 
-	<!-- Back to Top -->
-	<a href="#" class="btn btn-primary back-to-top"><i
-		class="fa fa-angle-double-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-	<!-- JavaScript Libraries -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-	<script src="{%static 'app/lib/easing/easing.min.js'%}"></script>
-	<script src="{%static 'app/lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{%static 'app/lib/easing/easing.min.js'%}"></script>
+    <script src="{%static 'app/lib/owlcarousel/owl.carousel.min.js'%}"></script>
 
-	<!-- Contact Javascript File -->
-	<script src="{%static 'app/mail/jqBootstrapValidation.min.js'%}"></script>
-	<script src="{%static 'app/mail/contact.js'%}"></script>
+    <!-- Contact Javascript File -->
+    <script src="{%static 'app/mail/jqBootstrapValidation.min.js'%}"></script>
+    <script src="{%static 'app/mail/contact.js'%}"></script>
 
-	<!-- Template Javascript -->
-	<script src="{%static 'app/js/main.js'%}"></script>
+    <!-- Template Javascript -->
+    <script src="{%static 'app/js/main.js'%}"></script>
+    <script src="{%static 'app/js/cart.js'%}"></script>
 </body>
 
 </html>

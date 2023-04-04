@@ -187,11 +187,12 @@
             <div class="product-item bg-light mb-4">
 
                 <div class="product-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="{{product.ImageURL}}" alt="img">
+                    <a href="{% url 'app:product_detail' product.id %}"><img class="img-fluid w-100" src="{{product.ImageURL}}" alt="img"></a>
+                    
 
                 </div>
                 <div class="text-center py-4">
-                    <a class="h6 text-decoration-none text-truncate" href="">{{product.name}}</a>
+                    <a class=" h6 text-decoration-none text-truncate"  href="{% url 'app:product_detail' product.id %}"  >{{product.name}}</a>
                     <div class="d-flex align-items-center justify-content-center mt-2">
                         <h5 class="price">${{product.price | floatformat:2}}</h5>
                         <h6 class=" text-muted ml-2"></h6>
